@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def stocks_list(request):
+    return render(request, 'stocks/list.html')
