@@ -1,12 +1,22 @@
 <html>
+
 <head>
-<title>在庫リスト</title>
+    <title>在庫リスト</title>
 </head>
+
 <body>
-在庫リスト
-<table border="1">
-<tr><td>にんじん</td><td>1個</td><td>3月10日</td></tr>
-<tr><td>にんじん</td><td>1個</td><td>3月11日</td></tr>
-</table>
+    在庫リスト
+    <table border="1">
+        {% for stock in stocks %}
+        <tr>
+            <td>{{ stock.food.category.name }}</td>
+            <td>{{ stock.food.name }}</td>
+            <td>{{ stock.amount }}個</td>
+            <td>{{ stock.expiration_date }}</td>
+            <td>{{ stock.put_by.name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
+
 </html>
